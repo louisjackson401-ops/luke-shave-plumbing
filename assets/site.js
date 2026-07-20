@@ -13,7 +13,7 @@
   function icon(p) { return '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>'; }
 
   /* ---------------- Data ---------------- */
-  var heroChips = ['Fully Insured', 'Free No-Obligation Quotes', 'Checkatrade 9.81/10'];
+  var heroChips = ['Fully Insured', 'Free No-Obligation Quotes', 'Bathroom Specialists'];
   var aboutPoints = ['Independent sole trader', 'No job too big or small', 'Tidy, respectful work', 'Competitive fixed rates'];
   var stats = [{ n: '9.81', l: 'Checkatrade Rating' }, { n: '22', l: 'Verified Reviews' }, { n: '100%', l: 'Recommended' }, { n: '2024', l: 'Vetted Member' }];
 

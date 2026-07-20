@@ -138,6 +138,16 @@ a{ color:inherit; }
 .rating-line .stars{ display:inline-flex; gap:2px; }
 .rating-line .stars svg{ fill:var(--amber); width:15px; height:15px; }
 .rating-line strong{ color:#fff; }
+/* Google / Checkatrade review proof row (top of hero) */
+.hero-proof{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+.proof-pill{ display:inline-flex; align-items:center; gap:9px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:8px 14px; border-radius:var(--r-pill); text-decoration:none; transition:background .2s var(--ease), border-color .2s var(--ease); }
+.proof-pill:hover{ background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.3); }
+.proof-pill .g{ width:17px; height:17px; flex:none; }
+.proof-pill .shield{ width:16px; height:16px; flex:none; }
+.proof-pill .stars{ display:inline-flex; gap:1px; }
+.proof-pill .stars svg{ width:13px; height:13px; fill:var(--amber); }
+.proof-pill .txt{ font-size:13px; font-weight:600; color:#D7E4F2; white-space:nowrap; }
+.proof-pill .txt strong{ color:#fff; font-weight:700; }
 
 /* ---------- Instant quote card (hero side) ---------- */
 .quote-card{ background:#fff; border-radius:var(--r-lg); box-shadow:var(--sh-xl); padding:clamp(24px,2.4vw,32px); color:var(--ink); }
