@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lukeshaveplumbing.co.uk/sitemap.xml
+Sitemap: https://lukeshaveplumbing.com/sitemap.xml

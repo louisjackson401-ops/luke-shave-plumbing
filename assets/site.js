@@ -30,15 +30,15 @@
     { t: 'Bathroom Upgrades', d: 'New suites, taps, radiators and towel rails — fresh upgrades without the full renovation.', img: 'assets/gallery-6.jpg', ic: icon(ICONS.upgrade), href: 'services.html#upgrades' }
   ];
   var gallery = [
-    { img: 'assets/gallery-1.jpg', t: 'Bathroom Refurbishment', n: 'Marble Walk-In Shower', tall: true },
-    { img: 'assets/gallery-7.jpg', t: 'Full Renovation', n: 'Slate & Stone Bathroom' },
-    { img: 'assets/gallery-4.jpg', t: 'Cloakroom', n: 'Marble & Navy Cloakroom' },
-    { img: 'assets/gallery-3.jpg', t: 'Walk-In Shower', n: 'Slate-Tiled Wet Room' },
-    { img: 'assets/gallery-2.jpg', t: 'Cloakroom', n: 'Marble Feature Cloakroom', tall: true },
-    { img: 'assets/gallery-6.jpg', t: 'Bathroom Upgrade', n: 'Shutters & Wood Vanity' },
-    { img: 'assets/gallery-5.jpg', t: 'Feature Bathroom', n: 'Botanical Feature Wall' },
-    { img: 'assets/gallery-8.jpg', t: 'Bathroom', n: 'Fluted Tile Suite' },
-    { img: 'assets/gallery-9.jpg', t: 'Traditional', n: 'Panelled Cloakroom' }
+    { img: 'assets/gallery-1.jpg', label: 'Marble & Brass Suite', tall: true },
+    { img: 'assets/gallery-7.jpg', label: 'Slate & Stone Shower Room' },
+    { img: 'assets/gallery-4.jpg', label: '' },
+    { img: 'assets/gallery-3.jpg', label: 'Walk-In Shower' },
+    { img: 'assets/gallery-2.jpg', label: 'Marble & Antique Gold Cloakroom', tall: true },
+    { img: 'assets/gallery-6.jpg', label: 'Fluted Oak & Stone Suite' },
+    { img: 'assets/gallery-5.jpg', label: 'Botanical Feature Bathroom' },
+    { img: 'assets/gallery-8.jpg', label: '' },
+    { img: 'assets/gallery-9.jpg', label: 'Traditional Panelled Bathroom' }
   ];
   var why = [
     { t: 'Personal Service', d: 'An independent plumber who answers the phone and turns up himself — no call centres.', ic: icon('<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>') },
@@ -107,7 +107,12 @@
     var gl = $('[data-gallery]');
     if (gl) {
       var limit = +(gl.getAttribute('data-limit') || gallery.length);
-      gl.innerHTML = gallery.slice(0, limit).map(function (g, i) { return '<button class="gal-item' + (g.tall ? ' tall' : '') + '" data-lb="' + i + '" aria-label="View ' + g.n.replace(/&/g, 'and') + '"><img src="' + g.img + '" alt="' + g.n.replace(/&/g, 'and') + ' — bathroom project by Luke Shave Plumbing" loading="lazy"><span class="gal-cap"><span><span class="t">' + g.t + '</span><span class="n">' + g.n + '</span></span><span class="exp"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></span></button>'; }).join('');
+      gl.innerHTML = gallery.slice(0, limit).map(function (g, i) {
+        var lbl = g.label || '';
+        var safe = lbl ? lbl.replace(/&/g, 'and') : 'Bathroom project by Luke Shave Plumbing';
+        var cap = '<span class="gal-cap">' + (lbl ? '<span class="n">' + lbl + '</span>' : '<span></span>') + '<span class="exp"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></span>';
+        return '<button class="gal-item' + (g.tall ? ' tall' : '') + '" data-lb="' + i + '" aria-label="View ' + safe + '"><img src="' + g.img + '" alt="' + safe + '" loading="lazy">' + cap + '</button>';
+      }).join('');
     }
 
     var wy = $('[data-why]');
@@ -177,7 +182,7 @@
     var lb = $('#lightbox'); if (!lb) return;
     var img = $('#lbImg'), gl = $('[data-gallery]'), li = 0;
     var limit = gl ? +(gl.getAttribute('data-limit') || gallery.length) : gallery.length;
-    function show() { var g = gallery[li]; img.src = g.img; img.alt = g.n.replace(/&/g, 'and'); }
+    function show() { var g = gallery[li]; img.src = g.img; img.alt = (g.label || 'Bathroom project by Luke Shave Plumbing').replace(/&/g, 'and'); }
     function open(i) { li = i; show(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
     function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
     function nav(d) { li = (li + d + limit) % limit; show(); }
