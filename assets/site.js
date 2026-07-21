@@ -12,7 +12,7 @@
   // Where website enquiries are emailed (via FormSubmit — no account needed).
   // Change this to Luke's preferred inbox any time. First enquiry after go-live
   // must be confirmed via the one-time FormSubmit activation email.
-  var LEAD_EMAIL = 'louisjackson401@gmail.com';
+  var LEAD_EMAIL = 'lukeshaveplumbing@gmail.com';
   function sendLead(fields) {
     try {
       var body = { _subject: 'New website enquiry — Luke Shave Plumbing', _template: 'table' };
