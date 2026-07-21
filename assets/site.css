@@ -97,6 +97,11 @@ a{ color:inherit; }
 .icon-btn svg{ width:22px; height:22px; }
 .burger{ display:none; background:var(--navy-700); }
 .burger:hover{ background:var(--navy-800); }
+.nav-tel{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:#fff; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.06rem; letter-spacing:.3px; white-space:nowrap; transition:color .2s var(--ease); }
+.nav-tel svg{ width:16px; height:16px; }
+.nav-tel:hover{ color:var(--blue-300); }
+.site-header.solid .nav-tel{ color:var(--ink); }
+.site-header.solid .nav-tel:hover{ color:var(--blue-600); }
 
 .site-header.solid{ background:#fff; box-shadow:0 6px 26px -16px rgba(14,27,51,.4); }
 .site-header.solid .util{ max-height:0; opacity:0; border-color:transparent; }
@@ -425,6 +430,7 @@ a{ color:inherit; }
 @media (max-width:1080px){
   .hero-inner{ grid-template-columns:1fr .95fr; gap:36px; }
   .svc-grid{ gap:18px; }
+  .nav-tel{ display:none; }
 }
 @media (max-width:900px){
   :root{ --header-h:70px; }
