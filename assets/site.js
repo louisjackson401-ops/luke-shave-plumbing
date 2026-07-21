@@ -9,6 +9,22 @@
   var WA = "https://api.whatsapp.com/message/XO5FWU33IIP3L1?autoload=1&app_absent=0";
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Where website enquiries are emailed (via FormSubmit — no account needed).
+  // Change this to Luke's preferred inbox any time. First enquiry after go-live
+  // must be confirmed via the one-time FormSubmit activation email.
+  var LEAD_EMAIL = 'louisjackson401@gmail.com';
+  function sendLead(fields) {
+    try {
+      var body = { _subject: 'New website enquiry — Luke Shave Plumbing', _template: 'table' };
+      for (var k in fields) { if (fields[k]) body[k] = fields[k]; }
+      fetch('https://formsubmit.co/ajax/' + encodeURIComponent(LEAD_EMAIL), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body)
+      }).catch(function () {});
+    } catch (e) {}
+  }
+
   function star(s) { return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01z"/></svg>'; }
   function icon(p) { return '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>'; }
 
@@ -232,6 +248,7 @@
         msg += 'Estimated range: ' + encodeURIComponent(estEl ? estEl.textContent : '') + '%0A';
         if (name) msg += 'Name: ' + encodeURIComponent(name.value.trim()) + '%0A';
         if (contact) msg += 'Contact: ' + encodeURIComponent(contact.value.trim());
+        sendLead({ Name: name ? name.value.trim() : '', Contact: contact ? contact.value.trim() : '', Service: c.service, Property: c.property, Urgency: c.urgency, 'Job size': c.size, 'Estimated range': estEl ? estEl.textContent : '', Source: 'Instant quote' });
         window.open(WA + '&text=' + msg, '_blank', 'noopener');
         if (thanks) { thanks.style.display = 'block'; }
       });
@@ -255,6 +272,7 @@
       e.preventDefault();
       if (!valid()) { var f = form.querySelector('.err input,.err select'); if (f) f.focus(); return; }
       var d = { name: $('#f-name').value.trim(), phone: $('#f-phone').value.trim(), email: $('#f-email').value.trim(), service: $('#f-service').value, message: $('#f-msg').value.trim() };
+      sendLead({ Name: d.name, Phone: d.phone, Email: d.email, Service: d.service, Details: d.message, Source: 'Contact form' });
       var t = "Hi Luke, I'd like a quote.%0A%0AName: " + encodeURIComponent(d.name) + '%0APhone: ' + encodeURIComponent(d.phone);
       if (d.email) t += '%0AEmail: ' + encodeURIComponent(d.email);
       t += '%0AService: ' + encodeURIComponent(d.service);
