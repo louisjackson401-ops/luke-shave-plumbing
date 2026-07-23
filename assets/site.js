@@ -28,7 +28,7 @@
   function star(s) { return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01z"/></svg>'; }
   function icon(p) { return '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>'; }
   function imgDims(src) { if (src.indexOf('gallery-9') > -1) return [691, 1300]; if (src.indexOf('hero-') > -1) return [616, 1200]; if (src.indexOf('about-') > -1) return [1500, 1125]; return [1300, 975]; }
-  function pic(src, alt, extra) { var a = src.replace(/\.jpg$/, '.avif'); var d = imgDims(src); return '<picture><source type="image/avif" srcset="' + a + '"><img src="' + src + '" alt="' + alt + '" width="' + d[0] + '" height="' + d[1] + '" loading="lazy" decoding="async"' + (extra || '') + '></picture>'; }
+  function pic(src, alt, extra) { var d = imgDims(src); return '<img src="' + src + '" alt="' + alt + '" width="' + d[0] + '" height="' + d[1] + '" loading="lazy" decoding="async"' + (extra || '') + '>'; }
 
   /* ---------------- Data ---------------- */
   var heroChips = ['Fully Insured', 'Free No-Obligation Quotes', 'Bathroom Specialists'];
