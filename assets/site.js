@@ -137,7 +137,8 @@
     if (wy) wy.innerHTML = why.map(function (c) { return '<div class="why-card"><div class="kico">' + c.ic + '</div><h3>' + c.t + '</h3><p>' + c.d + '</p></div>'; }).join('');
 
     var ar = $('[data-areas]');
-    if (ar) ar.innerHTML = areas.map(function (a) { return '<span><svg viewBox="0 0 24 24" fill="none" stroke="#0B4D91" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' + a + '</span>'; }).join('');
+    var areaLinks = { 'Bromley': '/plumber-bromley/', 'Orpington': '/plumber-orpington/', 'Beckenham': '/plumber-beckenham/', 'West Wickham': '/plumber-west-wickham/', 'Chislehurst': '/plumber-chislehurst/', 'Sidcup': '/plumber-sidcup/', 'Croydon': '/plumber-croydon/' };
+    if (ar) ar.innerHTML = areas.map(function (a) { var pin = '<svg viewBox="0 0 24 24" fill="none" stroke="#0B4D91" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'; var url = areaLinks[a]; return url ? '<a href="' + url + '">' + pin + a + '</a>' : '<span>' + pin + a + '</span>'; }).join('');
 
     var fq = $('[data-faq]');
     if (fq) {

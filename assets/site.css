@@ -326,8 +326,8 @@ a{ color:inherit; }
 /* ============================================================ AREAS */
 .areas-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(36px,5vw,56px); align-items:center; }
 .area-chips{ display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 26px; }
-.area-chips span{ background:var(--bg-alt); border:1px solid var(--line); color:#27384B; font-size:14px; font-weight:600; padding:10px 15px; border-radius:var(--r-sm); display:inline-flex; align-items:center; gap:8px; transition:border-color .2s var(--ease), color .2s var(--ease); }
-.area-chips span:hover{ border-color:var(--blue-600); color:var(--blue-600); }
+.area-chips span,.area-chips a{ text-decoration:none; background:var(--bg-alt); border:1px solid var(--line); color:#27384B; font-size:14px; font-weight:600; padding:10px 15px; border-radius:var(--r-sm); display:inline-flex; align-items:center; gap:8px; transition:border-color .2s var(--ease), color .2s var(--ease); }
+.area-chips span:hover,.area-chips a:hover{ border-color:var(--blue-600); color:var(--blue-600); }
 .area-chips svg{ width:13px; height:13px; }
 .area-note{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; background:var(--navy-700); padding:16px 20px; border-radius:var(--r-md); }
 .area-note span{ font-size:15px; font-weight:600; color:#D7E4F2; }
