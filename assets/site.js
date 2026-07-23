@@ -42,21 +42,21 @@
     upgrade: '<rect x="4" y="11" width="16" height="6" rx="2"/><path d="M4 11V7a3 3 0 0 1 6 0"/><path d="M7 21l-1 1M18 21l1 1"/>'
   };
   var services = [
-    { t: 'Complete Bathroom Renovations', d: 'Full renovations from strip-out to finish — tiling, suite and fixtures fitted with care and precision.', img: 'assets/gallery-1.jpg', ic: icon(ICONS.reno), href: 'services.html#renovations' },
-    { t: 'General Plumbing', d: 'Toilets, taps, valves and everyday plumbing installed and kept running properly all year round.', img: 'assets/gallery-4.jpg', ic: icon(ICONS.plumb), href: 'services.html#general' },
-    { t: 'Plumbing Repairs', d: 'Leaking taps, weeping joints, burst pipes and urgent failures fixed cleanly and for good.', img: 'assets/gallery-3.jpg', ic: icon(ICONS.repair), href: 'services.html#repairs' },
-    { t: 'Bathroom Upgrades', d: 'New suites, taps, radiators and towel rails — fresh upgrades without the full renovation.', img: 'assets/gallery-6.jpg', ic: icon(ICONS.upgrade), href: 'services.html#upgrades' }
+    { t: 'Complete Bathroom Renovations', d: 'Full renovations from strip-out to finish — tiling, suite and fixtures fitted with care and precision.', img: '/assets/gallery-1.jpg', ic: icon(ICONS.reno), href: '/services/#renovations' },
+    { t: 'General Plumbing', d: 'Toilets, taps, valves and everyday plumbing installed and kept running properly all year round.', img: '/assets/gallery-4.jpg', ic: icon(ICONS.plumb), href: '/services/#general' },
+    { t: 'Plumbing Repairs', d: 'Leaking taps, weeping joints, burst pipes and urgent failures fixed cleanly and for good.', img: '/assets/gallery-3.jpg', ic: icon(ICONS.repair), href: '/services/#repairs' },
+    { t: 'Bathroom Upgrades', d: 'New suites, taps, radiators and towel rails — fresh upgrades without the full renovation.', img: '/assets/gallery-6.jpg', ic: icon(ICONS.upgrade), href: '/services/#upgrades' }
   ];
   var gallery = [
-    { img: 'assets/gallery-1.jpg', label: 'Marble & Brass Suite', tall: true },
-    { img: 'assets/gallery-7.jpg', label: 'Slate & Stone Shower Room' },
-    { img: 'assets/gallery-4.jpg', label: '' },
-    { img: 'assets/gallery-3.jpg', label: 'Walk-In Shower' },
-    { img: 'assets/gallery-2.jpg', label: 'Marble & Antique Gold Cloakroom', tall: true },
-    { img: 'assets/gallery-6.jpg', label: 'Fluted Oak & Stone Suite' },
-    { img: 'assets/gallery-5.jpg', label: 'Botanical Feature Bathroom' },
-    { img: 'assets/gallery-8.jpg', label: '' },
-    { img: 'assets/gallery-9.jpg', label: 'Traditional Panelled Bathroom' }
+    { img: '/assets/gallery-1.jpg', label: 'Marble & Brass Suite', tall: true },
+    { img: '/assets/gallery-7.jpg', label: 'Slate & Stone Shower Room' },
+    { img: '/assets/gallery-4.jpg', label: '' },
+    { img: '/assets/gallery-3.jpg', label: 'Walk-In Shower' },
+    { img: '/assets/gallery-2.jpg', label: 'Marble & Antique Gold Cloakroom', tall: true },
+    { img: '/assets/gallery-6.jpg', label: 'Fluted Oak & Stone Suite' },
+    { img: '/assets/gallery-5.jpg', label: 'Botanical Feature Bathroom' },
+    { img: '/assets/gallery-8.jpg', label: '' },
+    { img: '/assets/gallery-9.jpg', label: 'Traditional Panelled Bathroom' }
   ];
   var why = [
     { t: 'Personal Service', d: 'An independent plumber who answers the phone and turns up himself — no call centres.', ic: icon('<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>') },
