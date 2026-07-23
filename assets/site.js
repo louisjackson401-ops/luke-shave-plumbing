@@ -27,6 +27,8 @@
 
   function star(s) { return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.88-5-4.87 7.1-1.01z"/></svg>'; }
   function icon(p) { return '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>'; }
+  function imgDims(src) { if (src.indexOf('gallery-9') > -1) return [691, 1300]; if (src.indexOf('hero-') > -1) return [616, 1200]; if (src.indexOf('about-') > -1) return [1500, 1125]; return [1300, 975]; }
+  function pic(src, alt, extra) { var a = src.replace(/\.jpg$/, '.avif'); var d = imgDims(src); return '<picture><source type="image/avif" srcset="' + a + '"><img src="' + src + '" alt="' + alt + '" width="' + d[0] + '" height="' + d[1] + '" loading="lazy" decoding="async"' + (extra || '') + '></picture>'; }
 
   /* ---------------- Data ---------------- */
   var heroChips = ['Fully Insured', 'Free No-Obligation Quotes', 'Bathroom Specialists'];
@@ -118,7 +120,7 @@
     if (st) st.innerHTML = stats.map(function (s) { return '<div class="stat"><div class="n">' + s.n + '</div><div class="l">' + s.l + '</div></div>'; }).join('');
 
     var sv = $('[data-services]');
-    if (sv) sv.innerHTML = services.map(function (s) { return '<a class="svc" href="' + s.href + '"><img src="' + s.img + '" alt="" loading="lazy"><div class="svc-body"><div class="kico">' + s.ic + '</div><h3>' + s.t + '</h3><p>' + s.d + '</p><span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>'; }).join('');
+    if (sv) sv.innerHTML = services.map(function (s) { return '<a class="svc" href="' + s.href + '" aria-label="View ' + s.t + '">' + pic(s.img, '') + '<div class="svc-body"><div class="kico">' + s.ic + '</div><h3>' + s.t + '</h3><p>' + s.d + '</p><span class="more">View ' + s.t.split(' ')[0] + ' <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>'; }).join('');
 
     var gl = $('[data-gallery]');
     if (gl) {
@@ -127,7 +129,7 @@
         var lbl = g.label || '';
         var safe = lbl ? lbl.replace(/&/g, 'and') : 'Bathroom project by Luke Shave Plumbing';
         var cap = '<span class="gal-cap">' + (lbl ? '<span class="n">' + lbl + '</span>' : '<span></span>') + '<span class="exp"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></span>';
-        return '<button class="gal-item' + (g.tall ? ' tall' : '') + '" data-lb="' + i + '" aria-label="View ' + safe + '"><img src="' + g.img + '" alt="' + safe + '" loading="lazy">' + cap + '</button>';
+        return '<button class="gal-item' + (g.tall ? ' tall' : '') + '" data-lb="' + i + '" aria-label="View ' + safe + '">' + pic(g.img, safe) + cap + '</button>';
       }).join('');
     }
 
