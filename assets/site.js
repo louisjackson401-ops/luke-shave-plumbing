@@ -33,7 +33,7 @@
   /* ---------------- Data ---------------- */
   var heroChips = ['Fully Insured', 'Free No-Obligation Quotes', 'Bathroom Specialists'];
   var aboutPoints = ['Independent sole trader', 'No job too big or small', 'Tidy, respectful work', 'Competitive fixed rates'];
-  var stats = [{ n: '9.81', l: 'Checkatrade Rating' }, { n: '22', l: 'Verified Reviews' }, { n: '100%', l: 'Recommended' }, { n: '2024', l: 'Vetted Member' }];
+  var stats = [{ n: '10/10', l: 'Checkatrade Rating' }, { n: '24', l: 'Verified Reviews' }, { n: '100%', l: 'Recommended' }, { n: '2024', l: 'Vetted Member' }];
 
   var ICONS = {
     reno: '<path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3"/>',
@@ -81,7 +81,7 @@
     { q: 'Do you offer free quotes?', a: 'Yes. Every quote is free and with no obligation. Send us a few details about your job and we’ll come back to you with a clear, honest price.' },
     { q: 'Are you insured?', a: 'Yes, we’re fully insured for the plumbing and bathroom work we carry out, so you’re covered from start to finish.' },
     { q: 'Do you handle complete bathroom renovations?', a: 'Absolutely. We handle everything from a single tap or repair right through to a complete bathroom renovation — strip-out, first fix, tiling, suite and finishing.' },
-    { q: 'Are you Checkatrade vetted?', a: 'Yes. We’ve been a vetted Checkatrade member since 2024 and are rated 9.81/10 across 22 verified customer reviews.' },
+    { q: 'Are you Checkatrade vetted?', a: 'Yes. We’ve been a vetted Checkatrade member since February 2024 and are rated 10/10 across 24 verified customer reviews.' },
     { q: 'How quickly can you respond?', a: 'We pride ourselves on fast response times. For the quickest reply, message us on WhatsApp and we’ll get straight back to you.' }
   ];
 
