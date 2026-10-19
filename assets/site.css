@@ -491,3 +491,6 @@ a{ color:inherit; }
   .reveal,.stagger > *{ opacity:1 !important; transform:none !important; transition:none !important; }
   .svc img,.gal-item img{ transition:none !important; }
 }
+
+.footer-bottom a{ color:inherit; text-decoration:underline; }
+.footer-bottom a:hover{ color:#fff; }

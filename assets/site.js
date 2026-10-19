@@ -146,8 +146,10 @@
     var fq = $('[data-faq]');
     if (fq) {
       fq.innerHTML = faqs.map(function (f) { return '<details class="faq"><summary>' + f.q + '<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="ans">' + f.a + '</div></details>'; }).join('');
-      var fs = $('#faqSchema');
-      if (fs) fs.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(function (f) { return { "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }; }) });
+      var fs = document.createElement('script');
+      fs.type = 'application/ld+json';
+      fs.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(function (f) { return { "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }; }) });
+      document.head.appendChild(fs);
     }
   }
 
@@ -240,6 +242,7 @@
       var thanks = $('[data-quote-thanks]', form);
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        var hp = form.querySelector('[name="_honey"]'); if (hp && hp.value) return;
         var name = $('[data-q="name"]', form), contact = $('[data-q="contact"]', form);
         var ok = true;
         if (name) { var nOk = !!name.value.trim(); name.parentElement.classList.toggle('err', !nOk); ok = ok && nOk; }
@@ -276,6 +279,7 @@
     }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var hp = form.querySelector('[name="_honey"]'); if (hp && hp.value) return;
       if (!valid()) { var f = form.querySelector('.err input,.err select'); if (f) f.focus(); return; }
       var d = { name: $('#f-name').value.trim(), phone: $('#f-phone').value.trim(), email: $('#f-email').value.trim(), service: $('#f-service').value, message: $('#f-msg').value.trim() };
       sendLead({ Name: d.name, Phone: d.phone, Email: d.email, Service: d.service, Details: d.message, Source: 'Contact form' });
