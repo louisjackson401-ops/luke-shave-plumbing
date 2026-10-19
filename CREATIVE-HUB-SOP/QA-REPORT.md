@@ -2,25 +2,23 @@
 
 **Project:** Luke Shave Plumbing  
 **Repository:** `/Users/louisjackson/luke plumbing web`  
-**Commit:** `5193029`  
-**Run:** 2026-10-19 14:20 UTC  
-**Engine:** creative-hub-qa 1.0.0 — 234 checks across 16 page(s)
+**Commit:** `db9e18c`  
+**Run:** 2026-10-19 15:33 UTC  
+**Engine:** creative-hub-qa 1.0.0 — 229 checks across 16 page(s)
 
 ---
 
-## Production gate: **NOT READY FOR PRODUCTION**
+## Production gate: **APPROVED FOR PRODUCTION**
 
 | | |
 |---|---|
-| Failures | 6 |
-| Critical | 1 |
-| High | 5 |
+| Failures | 0 |
+| Critical | 0 |
+| High | 0 |
 | Medium | 36 |
 | Low | 155 |
 | Warnings | 191 |
 | Not verified | 13 |
-
-> The gate is closed. Every FAIL below must be fixed or explicitly accepted in writing by the account lead before this site ships.
 
 ## Category status
 
@@ -29,7 +27,7 @@
 | AI Search | WARNING | 0 | 3 | 1 |
 | Accessibility | WARNING | 0 | 1 | 2 |
 | Code Quality | WARNING | 0 | 16 | 0 |
-| Content | FAIL | 6 | 21 | 0 |
+| Content | WARNING | 0 | 21 | 0 |
 | Conversion | WARNING | 0 | 4 | 1 |
 | Forms | WARNING | 0 | 8 | 1 |
 | Images | WARNING | 0 | 117 | 0 |
@@ -41,15 +39,6 @@
 | Security | WARNING | 0 | 3 | 2 |
 | Sitemap | PASS | 0 | 0 | 1 |
 | Technical SEO | WARNING | 0 | 16 | 0 |
-
-## Failures — must fix (6)
-
-- **Content** · `content.claims-gate` `critical` — 5 factual claim(s) on the site have not been confirmed by the client. Set claimsVerifiedByClient:true in .creative-hub/qa.config.json only once the client has confirmed every one in writing.
-- **Content** · `content.unverified-claim` `high` — Unconfirmed factual claim on /contact, / — rating claim: "Rated 9.81/"
-- **Content** · `content.unverified-claim` `high` — Unconfirmed factual claim on /contact, /, /plumber-beckenham, /plumber-bromley, /plumber-chislehurst, /plumber-croydon, /plumber-orpington, /plumber-sidcup, /plumber-west-wickham — review count claim: "22 reviews"
-- **Content** · `content.unverified-claim` `high` — Unconfirmed factual claim on /plumber-beckenham, /plumber-bromley, /plumber-chislehurst, /plumber-croydon, /plumber-orpington, /plumber-sidcup, /plumber-west-wickham — rating claim: "Rated 5.0"
-- **Content** · `content.unverified-claim` `high` — Unconfirmed factual claim on /quote — insurance/accreditation claim: "Fully insured"
-- **Content** · `content.unverified-claim` `high` — Unconfirmed factual claim on /terms — insurance/accreditation claim: "fully insured"
 
 ## Warnings — below standard (191)
 
@@ -111,14 +100,14 @@
 - **Technical SEO** · `seo.desc-long` `low` — contact/index.html: description 166 chars, will truncate
 - **Technical SEO** · `seo.title-long` `low` — gallery/index.html: title 77 chars, will truncate in SERPs — "Our Work | Luke Shave Plumbing &amp; Bathrooms — South East London &amp; Kent"
 - **Technical SEO** · `seo.title-long` `low` — index.html: title 77 chars, will truncate in SERPs — "Luke Shave Plumbing &amp; Bathrooms | Plumber in South East London &amp; Kent"
-- **Technical SEO** · `seo.desc-long` `low` — index.html: description 203 chars, will truncate
-- **Technical SEO** · `seo.desc-long` `low` — plumber-beckenham/index.html: description 171 chars, will truncate
-- **Technical SEO** · `seo.desc-long` `low` — plumber-bromley/index.html: description 177 chars, will truncate
-- **Technical SEO** · `seo.desc-long` `low` — plumber-chislehurst/index.html: description 173 chars, will truncate
-- **Technical SEO** · `seo.desc-long` `low` — plumber-croydon/index.html: description 169 chars, will truncate
-- **Technical SEO** · `seo.desc-long` `low` — plumber-orpington/index.html: description 179 chars, will truncate
-- **Technical SEO** · `seo.desc-long` `low` — plumber-sidcup/index.html: description 178 chars, will truncate
-- **Technical SEO** · `seo.desc-long` `low` — plumber-west-wickham/index.html: description 174 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — index.html: description 201 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — plumber-beckenham/index.html: description 169 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — plumber-bromley/index.html: description 175 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — plumber-chislehurst/index.html: description 171 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — plumber-croydon/index.html: description 167 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — plumber-orpington/index.html: description 177 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — plumber-sidcup/index.html: description 176 chars, will truncate
+- **Technical SEO** · `seo.desc-long` `low` — plumber-west-wickham/index.html: description 172 chars, will truncate
 - **Technical SEO** · `seo.title-long` `low` — quote/index.html: title 82 chars, will truncate in SERPs — "Instant Quote | Luke Shave Plumbing &amp; Bathrooms — South East London &amp; Kent"
 - **Technical SEO** · `seo.title-long` `low` — services/index.html: title 81 chars, will truncate in SERPs — "Our Services | Luke Shave Plumbing &amp; Bathrooms — South East London &amp; Kent"
 - **Images** · `img.legacy-format` `low` — 404.html: "/assets/logo-white.png" is .png — serve WebP/AVIF instead
@@ -280,7 +269,7 @@ _These were not checked. They are not passes. Each one names what access would s
 
 - **Privacy** · `privacy.no-trackers` — No third-party tracking technology detected in the markup
 
-## Passed (23)
+## Passed (24)
 
 _Each of these was actually inspected or measured in this run._
 
@@ -306,6 +295,7 @@ _Each of these was actually inspected or measured in this run._
 - **Conversion** · `cro.static-checks` — Conversion path checked on 16 page(s): phone reachability, CTA presence and position, value proposition, trust signals
 - **Performance** · `perf.css-weight` — Total CSS 40KB (budget 120KB)
 - **Performance** · `perf.js-weight` — Total JS 24KB (budget 180KB)
+- **Content** · `content.claims-confirmed` — 5 factual claim(s) present; claimsVerifiedByClient is true, so the client has signed these off: rating claim: "Rated 10/"; review count claim: "24 reviews"; rating claim: "Rated 5.0"; insurance/accreditation claim: "Fully insured"; insurance/accreditation claim: "fully insured"
 - **AI Search** · `ai.structure-checked` — Answer-engine readiness checked on 15 indexable page(s): question headings, semantic landmarks, schema-backed entities
 
 ---
